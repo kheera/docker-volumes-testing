@@ -1,0 +1,16 @@
+version: '2'
+
+services:
+        test-service:
+                container_name: test-service-container
+                image: test-service-image
+                build:
+                        context: .
+                        dockerfile: ./Dockerfile
+                volumes:
+                  - ./:/var/www/
+                  - node_modules:/var/www/node_modules
+                entrypoint: bash /var/www/start.sh
+
+volumes:
+  node_modules:
