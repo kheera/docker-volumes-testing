@@ -3,8 +3,8 @@ FROM ubuntu:18.04
 MAINTAINER Shane Nelson
 
 RUN apt-get update && apt-get install -y \
-    gcc g++ make gnupg \
-    curl; \
+        curl \
+        gcc g++ make gnupg; \
     curl -sL https://deb.nodesource.com/setup_8.x | bash; \
     apt-get install -y nodejs
 
